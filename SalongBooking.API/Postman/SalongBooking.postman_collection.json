@@ -1,0 +1,422 @@
+{
+	"info": {
+		"_postman_id": "salongbooking-api",
+		"name": "SalongBooking API",
+		"description": "API Collection för SalongBooking - Bokningssystem för frisörsalonger",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customers",
+			"item": [
+				{
+					"name": "Get All Customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/customers?page=1&pageSize=10&filter=&sort=asc",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "customers"],
+							"query": [
+								{"key": "page", "value": "1"},
+								{"key": "pageSize", "value": "10"},
+								{"key": "filter", "value": ""},
+								{"key": "sort", "value": "asc"}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Customer By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/customers/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "customers", "1"]
+						}
+					}
+				},
+				{
+					"name": "Create Customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Anna Andersson\",\n  \"email\": \"anna.andersson@example.com\",\n  \"password\": \"Password123!\",\n  \"phoneNumber\": \"0701234567\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/customers",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "customers"]
+						}
+					}
+				},
+				{
+					"name": "Update Customer",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Anna Andersson Uppdaterad\",\n  \"phoneNumber\": \"0707654321\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/customers/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "customers", "1"]
+						}
+					}
+				},
+				{
+					"name": "Delete Customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/customers/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "customers", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Hairdressers",
+			"item": [
+				{
+					"name": "Get All Hairdressers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/hairdressers?page=1&pageSize=10&filter=&sort=asc",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "hairdressers"],
+							"query": [
+								{"key": "page", "value": "1"},
+								{"key": "pageSize", "value": "10"},
+								{"key": "filter", "value": ""},
+								{"key": "sort", "value": "asc"}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Hairdresser By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/hairdressers/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "hairdressers", "1"]
+						}
+					}
+				},
+				{
+					"name": "Create Hairdresser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Erik Eriksson\",\n  \"email\": \"erik.eriksson@salong.se\",\n  \"password\": \"Password123!\",\n  \"specialization\": \"Herrklippning\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/hairdressers",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "hairdressers"]
+						}
+					}
+				},
+				{
+					"name": "Update Hairdresser",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Erik Eriksson Uppdaterad\",\n  \"specialization\": \"Damklippning\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/hairdressers/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "hairdressers", "1"]
+						}
+					}
+				},
+				{
+					"name": "Delete Hairdresser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/hairdressers/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "hairdressers", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "Get All Services",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/services?page=1&pageSize=10&filter=&sort=asc",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "services"],
+							"query": [
+								{"key": "page", "value": "1"},
+								{"key": "pageSize", "value": "10"},
+								{"key": "filter", "value": ""},
+								{"key": "sort", "value": "asc"}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Service By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/services/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "services", "1"]
+						}
+					}
+				},
+				{
+					"name": "Create Service",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Barnklippning\",\n  \"price\": 250,\n  \"durationMinutes\": 30,\n  \"description\": \"Klippning för barn\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/services",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "services"]
+						}
+					}
+				},
+				{
+					"name": "Update Service",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Barnklippning Uppdaterad\",\n  \"price\": 300,\n  \"durationMinutes\": 35,\n  \"description\": \"Klippning för barn - uppdaterad\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/services/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "services", "1"]
+						}
+					}
+				},
+				{
+					"name": "Delete Service",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/services/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "services", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "Get All Bookings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/bookings?page=1&pageSize=10&filter=&sort=asc",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "bookings"],
+							"query": [
+								{"key": "page", "value": "1"},
+								{"key": "pageSize", "value": "10"},
+								{"key": "filter", "value": ""},
+								{"key": "sort", "value": "asc"}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Booking By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/bookings/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "bookings", "1"]
+						}
+					}
+				},
+				{
+					"name": "Create Booking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"bookingDate\": \"2024-12-20T00:00:00\",\n  \"bookingTime\": \"10:00:00\",\n  \"customerId\": 1,\n  \"hairdresserId\": 1,\n  \"serviceId\": 1,\n  \"notes\": \"Önskar kort klippning\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/bookings",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "bookings"]
+						}
+					}
+				},
+				{
+					"name": "Update Booking",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"bookingDate\": \"2024-12-21T00:00:00\",\n  \"bookingTime\": \"11:00:00\",\n  \"notes\": \"Uppdaterad bokning\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/bookings/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "bookings", "1"]
+						}
+					}
+				},
+				{
+					"name": "Cancel Booking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/bookings/1/cancel",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "bookings", "1", "cancel"]
+						}
+					}
+				},
+				{
+					"name": "Delete Booking",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/bookings/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "bookings", "1"]
+						}
+					}
+				},
+				{
+					"name": "Get Bookings By Customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/bookings/customer/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "bookings", "customer", "1"]
+						}
+					}
+				},
+				{
+					"name": "Get Bookings By Hairdresser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/bookings/hairdresser/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "bookings", "hairdresser", "1"]
+						}
+					}
+				},
+				{
+					"name": "Get Bookings By Date",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/bookings/date/2024-12-20",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "bookings", "date", "2024-12-20"]
+						}
+					}
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://localhost:7000",
+			"type": "string"
+		}
+	]
+}
+
